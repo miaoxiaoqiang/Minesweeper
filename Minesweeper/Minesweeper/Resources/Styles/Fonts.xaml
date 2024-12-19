@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="UIFont">/Resources/Fonts/icomoon.ttf#icomoon</FontFamily>
+    <!--<FontFamily x:Key="DigitalFont">/Resources/Fonts/LCDATTPhoneTimeDate.ttf#LCD AT&amp;T Phone Time/Date</FontFamily>-->
+    <FontFamily x:Key="DigitalFont">/Resources/Fonts/digital_display.ttf#digital display</FontFamily>
+</ResourceDictionary>

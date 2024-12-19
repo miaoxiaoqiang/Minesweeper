@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D6FA96F-037B-4160-8385-3D7863A714B9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Minesweeper</RootNamespace>
+    <AssemblyName>Minesweeper</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Minesweeper.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MvvmLight">
+      <HintPath>..\packages\MvvmLight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\packages\System.Windows.Interactivity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\IndexToImageConverter.cs" />
+    <Compile Include="Converters\LevelToEnumCNConverter.cs" />
+    <Compile Include="Converters\TabItemBorderThicknessConverter.cs" />
+    <Compile Include="Converters\DatetimeToStringConverter.cs" />
+    <Compile Include="Converters\TitlePlayerNameConverter.cs" />
+    <Compile Include="Converters\WinRateConverter.cs" />
+    <Compile Include="Core\RecordParser.cs" />
+    <Compile Include="Model\ObservableDictionary.cs" />
+    <Resource Include="Resources\Images\Lv1.png" />
+    <Resource Include="Resources\Images\lv2.png" />
+    <Resource Include="Resources\Images\lv3.png" />
+    <Resource Include="Resources\Images\lv4.png" />
+    <Resource Include="Resources\Images\lv5.png" />
+    <Resource Include="Structure\Structure.xsd">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Compile Include="Componets\XPWindow.cs" />
+    <Compile Include="Converters\CellStatusToImageConverter.cs" />
+    <Compile Include="Converters\StringEmptyToNullConverter.cs" />
+    <Compile Include="Converters\FaceStatusToImageConverter.cs" />
+    <Compile Include="Model\SortableObservableCollection.cs" />
+    <Compile Include="Model\Streak.cs" />
+    <Compile Include="ViewModel\HeroRankViewModel.cs" />
+    <Compile Include="ViewModel\MineCustomViewModel.cs" />
+    <Compile Include="ViewModel\NickNameViewModel.cs" />
+    <Compile Include="Converters\LevelToIsCheckedConverter.cs" />
+    <Compile Include="Converters\MineStatisticConverter.cs" />
+    <Compile Include="Converters\SecondsToTimeConverter.cs" />
+    <Compile Include="Core\Cell.cs" />
+    <Compile Include="Core\CellPool.cs" />
+    <Compile Include="Core\MinesweeperGame.cs" />
+    <Compile Include="HeroWindow.xaml.cs">
+      <DependentUpon>HeroWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CellImage.cs" />
+    <Compile Include="Model\FaceStatus.cs" />
+    <Compile Include="Model\GameLevel.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="MineCustomWindow.xaml.cs">
+      <DependentUpon>MineCustomWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GameStatus.cs" />
+    <Compile Include="Model\HistoryRecord.cs" />
+    <Compile Include="NickNameWindow.xaml.cs">
+      <DependentUpon>NickNameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Helper.cs" />
+    <Compile Include="Utils\Obfuscat\ConfusionGen.cs" />
+    <Compile Include="Utils\Obfuscat\EncodingBase62.cs" />
+    <Compile Include="Utils\Obfuscat\IdObfuscator.cs" />
+    <None Include="Resources\Fonts\YFF-012.ttf" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Resource Include="Resources\Fonts\digital_display.ttf" />
+    <Resource Include="Resources\Fonts\icomoon.ttf" />
+    <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HeroWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AttachedProperty\AttachedProperties.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MineCustomWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NickNameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\Fonts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\GroupBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\Image.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\Label.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\XPWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="Minesweeper.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\close_active.png" />
+    <Resource Include="Resources\Images\close_hover.png" />
+    <Resource Include="Resources\Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Dead.gif" />
+    <Resource Include="Resources\Images\DeadClicked.gif" />
+    <Resource Include="Resources\Images\Normal.gif" />
+    <Resource Include="Resources\Images\NormalClicked.gif" />
+    <Resource Include="Resources\Images\Nervous.gif" />
+    <Resource Include="Resources\Images\NervousClicked.gif" />
+    <Resource Include="Resources\Images\Win.gif" />
+    <Resource Include="Resources\Images\WinClicked.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\blank.gif" />
+    <Resource Include="Resources\Images\1.gif" />
+    <Resource Include="Resources\Images\2.gif" />
+    <Resource Include="Resources\Images\3.gif" />
+    <Resource Include="Resources\Images\4.gif" />
+    <Resource Include="Resources\Images\5.gif" />
+    <Resource Include="Resources\Images\6.gif" />
+    <Resource Include="Resources\Images\7.gif" />
+    <Resource Include="Resources\Images\8.gif" />
+    <Resource Include="Resources\Images\NotOpened.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\blood.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ask.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\error.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\flag.gif" />
+    <Resource Include="Resources\Images\mine.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\hole.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AskClicked.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\cry.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

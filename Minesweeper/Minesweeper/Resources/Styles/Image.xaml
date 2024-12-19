@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="Normal" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/Normal.gif" />
+    <BitmapImage x:Key="Nervous" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/Nervous.gif" />
+    <BitmapImage x:Key="Win" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/Win.gif" />
+    <BitmapImage x:Key="Dead" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/Dead.gif" />
+    <BitmapImage x:Key="NormalClicked" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/NormalClicked.gif" />
+    <BitmapImage x:Key="NervousClicked" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/NervousClicked.gif" />
+    <BitmapImage x:Key="WinClicked" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/WinClicked.gif" />
+    <BitmapImage x:Key="DeadClicked" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/DeadClicked.gif" />
+
+    <BitmapImage x:Key="Blank" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/blank.gif" />
+    <BitmapImage x:Key="Num1" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/1.gif" />
+    <BitmapImage x:Key="Num2" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/2.gif" />
+    <BitmapImage x:Key="Num3" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/3.gif" />
+    <BitmapImage x:Key="Num4" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/4.gif" />
+    <BitmapImage x:Key="Num5" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/5.gif" />
+    <BitmapImage x:Key="Num6" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/6.gif" />
+    <BitmapImage x:Key="Num7" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/7.gif" />
+    <BitmapImage x:Key="Num8" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/8.gif" />
+    <BitmapImage x:Key="NotOpened" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/NotOpened.gif" />
+
+    <BitmapImage x:Key="Question" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/ask.gif" />
+    <BitmapImage x:Key="QuestionClicked" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/AskClicked.gif" />
+    <BitmapImage x:Key="MarkedErrorMine" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/error.gif" />
+    <BitmapImage x:Key="Flag" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/flag.gif" />
+    <BitmapImage x:Key="NotMarkedMine" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/mine.gif" />
+    <BitmapImage x:Key="StepOnMine" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/blood.gif" />
+
+    <BitmapImage x:Key="No1" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/lv1.png" />
+    <BitmapImage x:Key="No2" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/lv2.png" />
+    <BitmapImage x:Key="No3" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/lv3.png" />
+    <BitmapImage x:Key="No4" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/lv4.png" />
+    <BitmapImage x:Key="No5" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/lv5.png" />
+    <BitmapImage x:Key="Cry" UriSource="pack://application:,,,/Minesweeper;component/Resources/Images/Cry.png" />
+
+</ResourceDictionary>

@@ -1,0 +1,89 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:customproper="clr-namespace:Minesweeper.AttachedProperty">
+
+    <Style x:Key="TipTextBox" TargetType="TextBox">
+        <Setter Property="MinHeight" Value="30"/>
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Border>
+                            <Grid>
+                                <AdornedElementPlaceholder x:Name="adorner" />
+                            </Grid>
+                        </Border>
+                        <Grid Width="10"/>
+                        <Popup x:Name="popup"
+                               AllowsTransparency="True"
+                               Placement="Top"
+                               customproper:AttachedProperties.PopupPlacementTarget="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                            <Label Style="{StaticResource BottomBubblePanel}"
+                                   Tag="Top"
+                                   x:Name="errorBorder">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Foreground="Red"
+                                                   FontSize="13"
+                                                   Padding="2"
+                                                   Text="{Binding ElementName=adorner, Path=AdornedElement.(Validation.Errors).CurrentItem.ErrorContent}"
+                                                   TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Label>
+                            <!--<Border x:Name="errorBorder" Background="#ffdc000c" Opacity="0" MinHeight="30" >
+                            <TextBlock Margin="5,0" Text="{Binding ElementName=adorner, Path=AdornedElement.(Validation.Errors).CurrentItem.ErrorContent}" Foreground="White" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                        </Border>-->
+                        </Popup>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Value="True">
+                            <DataTrigger.Binding>
+                                <Binding ElementName="adorner" Path="AdornedElement.IsKeyboardFocused" />
+                            </DataTrigger.Binding>
+                            <DataTrigger.Setters>
+                                <Setter Property="IsOpen" TargetName="popup" Value="true"/>
+                            </DataTrigger.Setters>
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard x:Name="fadeInStoryboard">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="00:00:00.15" Storyboard.TargetName="errorBorder" Storyboard.TargetProperty="Opacity" To="1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <StopStoryboard BeginStoryboardName="fadeInStoryboard"/>
+                                <BeginStoryboard x:Name="fadeOutStoryBoard">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="errorBorder" Storyboard.TargetProperty="Opacity" To="0"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                      Focusable="False"
+                                      HorizontalScrollBarVisibility="Hidden"
+                                      VerticalScrollBarVisibility="Hidden" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Validation.HasError" Value="True">
+                            <Setter Property="BorderBrush" Value="#ffdc000c"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
